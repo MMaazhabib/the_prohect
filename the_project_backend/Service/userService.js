@@ -57,5 +57,20 @@ module.exports = {
         }
     },
 
+    getAllProducts: async () => {
+        try {
+            const role = await userModel.getAllProducts();
+            if (role.error) {
+                return { error: role.error };
+            };
+            return {
+                response: role.response,
+            };
+        } catch (error) {
+            return {
+                error: error.message,
+            };
+        }
+    },
 
 }

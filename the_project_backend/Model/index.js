@@ -1,10 +1,13 @@
 const sequelize = require("../bin/connection");
 
 const Users = require("./defination/user");
+const Products = require("./defination/products");
 
 
 const models = {
-    Users
+    Users,
+    Products
+    
 };
 
 const db = {};

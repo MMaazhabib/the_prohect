@@ -38,4 +38,17 @@ module.exports = {
       };
     }
   },
+  getAllProducts: async () => {
+    try {
+        const product = await models.Products.findAll();
+        return {
+            response: product,
+        }
+    } catch (error) {
+        return {
+            error: error.message,
+        };
+    }
+
+}
 };

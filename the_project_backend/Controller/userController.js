@@ -72,5 +72,23 @@ module.exports = {
         }
     },
 
+    getAllProducts: async (req, res) => {
+        try {
+            const product = await userService.getAllProducts();
+
+            if (product.error) {
+                return res.send({
+                    error: product.error,
+                });
+            }
+            return res.send({
+                response: product.response,
+            })
+        } catch (error) {
+            return {
+                error: error.message,
+            };
+        }
+    },
 
 }
